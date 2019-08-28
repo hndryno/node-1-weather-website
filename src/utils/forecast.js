@@ -9,10 +9,12 @@ const forecast = (latitude, longitude, callback) =>{
             callback(response.body.error, undefined)
         }else{
             const temperature = response.body.currently.temperature
+
             const precipProbability = response.body.currently.precipProbability
+            const humidity = response.body.currently.humidity
             const summary = response.body.daily.data[0].summary
             callback(undefined, {
-                timezone: response.body.timezone +' '+ summary+' temperature saat ini ' + temperature + ' derajat farenheit. Ada '+ precipProbability +' % Kemungkinan Hujan'
+                timezone: response.body.timezone +' '+ summary+' temperature saat ini ' + temperature + ' derajat farenheit. Ada '+ precipProbability +' % Kemungkinan Hujan, dengan kelembapan' + humidity
             })
         }
     })
