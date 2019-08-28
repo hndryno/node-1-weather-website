@@ -43,7 +43,7 @@ app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res)=>{
     res.render('index',{
-        judul: 'Weather-app',
+        judul: 'Aplikasi Cuaca',
         pembuat: 'Hendriyono'
     })
 })
